@@ -9,7 +9,6 @@ class getVideoByIdTest extends TestCase
     use RefreshDatabase;
     public function testGetVideoById(){
     $video = Video::factory(1)->create();
-    $response = $this->get(sprintf('/api/videos/%s', $video[0]['id']));
-    $response->assertJsonFragment($video[0]->toArray());
+    $this->get(sprintf('/api/videos/%s', $video[0]['id']))->assertJsonFragment($video[0]->toArray());
     }
 }
