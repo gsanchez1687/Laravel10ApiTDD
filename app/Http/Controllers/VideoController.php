@@ -10,4 +10,8 @@ class VideoController extends Controller
     public function view(string $id){
         return Video::find($id);
     }
+
+    public function admin(){
+        return Video::all();
+    }
 }
